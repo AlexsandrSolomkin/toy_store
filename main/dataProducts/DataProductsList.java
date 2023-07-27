@@ -1,19 +1,52 @@
 package main.dataProducts;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class DataProductsList<T> {
-    private ArrayList<T> producList;
+import main.product.Product;
 
-    public DataProductsList(ArrayList<T> producList) {
-        this.producList = producList;
+public class DataProductsList implements Iterable<Product> {
+    private List<Product> productList;
+
+    public DataProductsList() {
+        productList = new ArrayList<>();
     }
 
-    public ArrayList<T> getProducList() {
-        return producList;
+    public void addProduct(Product product) {
+        productList.add(product);
     }
 
-    public void setProducList(ArrayList<T> producList) {
-        this.producList = producList;
+    @Override
+    public Iterator<Product> iterator() {
+        return new ProductIterator(productList);
     }
+
+    // public DataProductsList(List<T> productList) {
+    // this.productList = productList;
+    // }
+
+    // public boolean addProduct(T product){
+    // if(product == null){
+    // return false;
+    // }
+
+    // if (!productList.contains(product)) {
+    // productList.add(product);
+    // return true;
+    // }
+    // return false;
+    // }
+
+    // public String getInfo() {
+    //     StringBuilder sInfo = new StringBuilder();
+    //     sInfo.append("На складе: ");
+    //     sInfo.append(productList.size());
+    //     sInfo.append(" товары: \n");
+    //     for (Product product : productList) {
+    //         sInfo.append(product.toString());
+    //         sInfo.append("\n");
+    //     }
+    //     return sInfo.toString();
+    // }
 }
