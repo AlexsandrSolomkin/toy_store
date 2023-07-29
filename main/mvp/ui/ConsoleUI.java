@@ -78,7 +78,7 @@ public class ConsoleUI implements View {
 
     @Override
     public void getProduct() {
-        
+        presenter.getProduct();
     }
 
     @Override

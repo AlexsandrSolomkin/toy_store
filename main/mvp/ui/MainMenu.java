@@ -13,6 +13,7 @@ public class MainMenu {
         this.view = view;
         commandList = new ArrayList<>();
         commandList.add(new AddProduct(view));
+        commandList.add(new GetInfoProducts(view));
         commandList.add(new ExitWorkProgramm(view));
     }
 
@@ -24,7 +25,7 @@ public class MainMenu {
             stringBuilder.append(commandList.get(i).getDescription());
             stringBuilder.append("\n");
         }
-        stringBuilder.deleteCharAt(stringBuilder.length()-1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         return stringBuilder.toString();
     }
 

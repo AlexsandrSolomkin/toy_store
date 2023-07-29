@@ -2,20 +2,20 @@ package main.mvp.ui.commands;
 
 import main.mvp.ui.View;
 
-public class AddProduct implements Command{
+public class GetInfoProducts implements Command{
     private View view;
 
-    public AddProduct(View view) {
+    public GetInfoProducts(View view) {
         this.view = view;
     }
 
     @Override
     public String getDescription() {
-        return "Добавление товара";
+        return "Показать информацию о товарах";
     }
 
     @Override
     public void execute() {
-        view.addProduct();
+        view.getProduct();
     }
 }
