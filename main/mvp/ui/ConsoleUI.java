@@ -73,19 +73,17 @@ public class ConsoleUI implements View {
 
     @Override
     public void setPresenter(Presenter presenter) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPresenter'");
+        this.presenter = presenter;
     }
 
     @Override
     public void getProduct() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProduct'");
+        
     }
 
     @Override
     public void exitWorkProgramm() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exitWorkProgramm'");
+        System.out.println("Работа завершена.");
+        flagWork = false;
     }
 }

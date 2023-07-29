@@ -14,6 +14,11 @@ public class Presenter {
     }
 
     public void addProduct(String nameP, int probabilityP, int allP) {
+        service.addProduct(nameP, probabilityP, allP);
         System.out.println("Добавление товара");
+    }
+
+    public void getProduct() {
+        view.print(service.getInfo());
     }
 }

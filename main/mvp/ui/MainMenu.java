@@ -6,11 +6,14 @@ import java.util.List;
 import main.mvp.ui.commands.*;
 
 public class MainMenu {
-    List<Command> commandList;
+    private List<Command> commandList;
+    private View view;
 
-    public MainMenu(ConsoleUI consoleUI) {
+    public MainMenu(View view) {
+        this.view = view;
         commandList = new ArrayList<>();
-        commandList.add(new AddProduct(consoleUI));
+        commandList.add(new AddProduct(view));
+        commandList.add(new ExitWorkProgramm(view));
     }
 
     public String printMenu() {
@@ -21,6 +24,7 @@ public class MainMenu {
             stringBuilder.append(commandList.get(i).getDescription());
             stringBuilder.append("\n");
         }
+        stringBuilder.deleteCharAt(stringBuilder.length()-1);
         return stringBuilder.toString();
     }
 
