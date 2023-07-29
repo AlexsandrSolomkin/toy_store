@@ -1,4 +1,5 @@
 package main.dataProducts.workDataProducts;
+
 import java.io.*;
 
 public class FileHandler implements Writable {

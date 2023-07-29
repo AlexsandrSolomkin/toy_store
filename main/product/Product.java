@@ -40,21 +40,4 @@ public class Product {
     public void setAll(int all) {
         this.all = all;
     }
-
-    // @Override
-    // public String toString(){
-    //     StringBuilder info = new StringBuilder();
-    //     info.append("\n===========ДАННЫЕ О ТОВАРЕ=========\n");
-    //     info.append("id: ");
-    //     info.append(id);
-    //     info.append("Название: ");
-    //     info.append(name);
-    //     info.append("Модификатор выпадения: ");
-    //     info.append(probability);
-    //     info.append("Количество данного товара на складе: ");
-    //     info.append(all);
-
-    //     return info.toString();
-    // }
-
 }
