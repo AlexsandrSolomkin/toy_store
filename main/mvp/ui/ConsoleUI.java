@@ -91,6 +91,11 @@ public class ConsoleUI implements View {
     }
 
     @Override
+    public void prizeDrawing(){
+        presenter.prizeDrawing();
+    }
+
+    @Override
     public void exitWorkProgramm() {
         System.out.println("Работа завершена.");
         flagWork = false;

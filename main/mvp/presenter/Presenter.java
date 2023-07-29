@@ -23,6 +23,12 @@ public class Presenter {
         System.out.println("Вес изменен");
     }
 
+    public void prizeDrawing(){
+        System.out.println("Поздравляю вы выиграли: ");
+        
+
+    }
+
     public void getProduct() {
         view.print(service.getInfo());
     }

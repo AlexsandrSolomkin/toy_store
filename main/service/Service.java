@@ -1,5 +1,7 @@
 package main.service;
 
+import java.util.ArrayList;
+
 import main.dataProducts.DataProductsList;
 import main.product.Product;
 
@@ -40,7 +42,29 @@ public class Service {
     }
 
     public void setProbability(int index, int value){
-        // Product newProbility = dataProductsList.setProbability(index, value);
         dataProductsList.setProbability(index, value);
     }
+// -----------------------------------------------------------------------
+    public int randomPrizeIndex(){
+        int sumAllProbality = 0;
+        ArrayList<Integer> randomPrize = new ArrayList<>();
+        int answerPrizeIndex = 0;
+
+        for (Product product : dataProductsList) {
+            sumAllProbality += product.getProbability();
+        }
+
+        int randomInt = (int) (Math.random() * sumAllProbality);
+        sumAllProbality = 0;
+
+        for (Product product : dataProductsList) {
+            sumAllProbality += product.getProbability();
+            if (sumAllProbality >= randomInt){
+                answerPrizeIndex = product.getId();
+            }
+        }
+
+        return answerPrizeIndex;
+    }
+    // -----------------------------------------------------------------------
 }

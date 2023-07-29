@@ -15,6 +15,7 @@ public class MainMenu {
         commandList.add(new AddProduct(view));
         commandList.add(new GetInfoProducts(view));
         commandList.add(new SetProbability(view));
+        commandList.add(new PrizeDrawing(view));
         commandList.add(new ExitWorkProgramm(view));
     }
 
