@@ -82,6 +82,15 @@ public class ConsoleUI implements View {
     }
 
     @Override
+    public void setProbability(){
+        System.out.println("Введите id нужного товара: ");
+        int index = scanner.nextInt();
+        System.out.println("Введите вес: ");
+        int probability = scanner.nextInt();
+        presenter.setProbability(index, probability);
+    }
+
+    @Override
     public void exitWorkProgramm() {
         System.out.println("Работа завершена.");
         flagWork = false;

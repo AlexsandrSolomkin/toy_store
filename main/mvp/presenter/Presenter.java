@@ -18,6 +18,11 @@ public class Presenter {
         System.out.println("Добавление товара");
     }
 
+    public void setProbability(int index, int value){
+        service.setProbability(index, value);
+        System.out.println("Вес изменен");
+    }
+
     public void getProduct() {
         view.print(service.getInfo());
     }

@@ -38,4 +38,9 @@ public class Service {
         }
         return stringBuilder.toString();
     }
+
+    public void setProbability(int index, int value){
+        // Product newProbility = dataProductsList.setProbability(index, value);
+        dataProductsList.setProbability(index, value);
+    }
 }

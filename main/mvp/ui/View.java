@@ -10,5 +10,6 @@ public interface View {
 
     void addProduct();
     void getProduct();
+    void setProbability();
     void exitWorkProgramm();
 }

@@ -14,6 +14,7 @@ public class MainMenu {
         commandList = new ArrayList<>();
         commandList.add(new AddProduct(view));
         commandList.add(new GetInfoProducts(view));
+        commandList.add(new SetProbability(view));
         commandList.add(new ExitWorkProgramm(view));
     }
 
