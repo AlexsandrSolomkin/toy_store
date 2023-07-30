@@ -92,7 +92,9 @@ public class ConsoleUI implements View {
 
     @Override
     public void prizeDrawing(){
-        presenter.prizeDrawing();
+        System.out.println("Введите имя победителя: ");
+        String nameWinner = scanner.nextLine();
+        presenter.prizeDrawing(nameWinner);
     }
 
     @Override

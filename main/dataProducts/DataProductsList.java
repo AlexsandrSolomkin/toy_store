@@ -21,9 +21,9 @@ public class DataProductsList implements Iterable<Product> {
         productList.get(index);
     }
 
-    // public void setProbability(int index, Product value){
-    //     productList.set(index, value);
-    // }
+    public Product getObject(int index){
+         return productList.get(index);
+    }
 
     public void setProbability(int index, int value){
         Product newValue = productList.get(index);
@@ -33,6 +33,6 @@ public class DataProductsList implements Iterable<Product> {
 
     @Override
     public Iterator<Product> iterator() {
-        return new ProductIterator(productList);
+        return new ObjectIterator(productList);
     }
 }

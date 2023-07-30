@@ -23,10 +23,9 @@ public class Presenter {
         System.out.println("Вес изменен");
     }
 
-    public void prizeDrawing(){
+    public void prizeDrawing(String nameWinner){
         System.out.println("Поздравляю вы выиграли: ");
-        
-
+        service.randomPrize(nameWinner);
     }
 
     public void getProduct() {

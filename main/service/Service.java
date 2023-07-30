@@ -1,26 +1,34 @@
 package main.service;
 
-import java.util.ArrayList;
-
 import main.dataProducts.DataProductsList;
+import main.dataProducts.DataWinner;
 import main.product.Product;
+import main.product.Winner;
+
 
 public class Service {
     private int id;
     private DataProductsList dataProductsList;
+    private DataWinner dataWinner;
 
-    public Service(DataProductsList productsList) {
+    public Service(DataProductsList productsList, DataWinner dataWinner) {
         this.dataProductsList = productsList;
+        this.dataWinner = dataWinner;
     }
 
     public Service() {
-        this(new DataProductsList());
+        this(new DataProductsList(), new DataWinner());
     }
 
     public void addProduct(String name, int probability, int all) {
         Product product = new Product(id++, name, probability, all);
         dataProductsList.addProduct(product);
     }
+
+    // public void addWinner(String name, Product prize) {
+    //     Winner winner = new Winner(id++, name, prize);
+    //     dataWinner.addWinner(winner);
+    // }
 
     public String getInfo() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -45,26 +53,35 @@ public class Service {
         dataProductsList.setProbability(index, value);
     }
 // -----------------------------------------------------------------------
-    public int randomPrizeIndex(){
+    public void randomPrize(String nameWinner){
+        int idProduct = randomPrizeId();
+        Product prize = dataProductsList.getObject(idProduct);
+        Winner winner = new Winner(id++, nameWinner, prize);
+        dataWinner.addWinner(winner);
+
+    }
+
+    public int randomPrizeId(){
         int sumAllProbality = 0;
-        ArrayList<Integer> randomPrize = new ArrayList<>();
-        int answerPrizeIndex = 0;
+
+        Product firsProduct = (Product) dataProductsList.getObject(0);
+        int answerPrizeId = firsProduct.getId();
 
         for (Product product : dataProductsList) {
             sumAllProbality += product.getProbability();
         }
 
-        int randomInt = (int) (Math.random() * sumAllProbality);
+        int randomInt = (int) (Math.random() * sumAllProbality) + 1;
         sumAllProbality = 0;
 
         for (Product product : dataProductsList) {
             sumAllProbality += product.getProbability();
             if (sumAllProbality >= randomInt){
-                answerPrizeIndex = product.getId();
+                return answerPrizeId = product.getId();
             }
         }
 
-        return answerPrizeIndex;
+        return answerPrizeId;
     }
     // -----------------------------------------------------------------------
 }
