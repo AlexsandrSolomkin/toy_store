@@ -25,11 +25,6 @@ public class Service {
         dataProductsList.addProduct(product);
     }
 
-    // public void addWinner(String name, Product prize) {
-    //     Winner winner = new Winner(id++, name, prize);
-    //     dataWinner.addWinner(winner);
-    // }
-
     public String getInfo() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Товары на складе:\n");
@@ -52,13 +47,13 @@ public class Service {
     public void setProbability(int index, int value){
         dataProductsList.setProbability(index, value);
     }
-// -----------------------------------------------------------------------
+
     public void randomPrize(String nameWinner){
         int idProduct = randomPrizeId();
         Product prize = dataProductsList.getObject(idProduct);
         Winner winner = new Winner(id++, nameWinner, prize);
         dataWinner.addWinner(winner);
-
+        dataProductsList.delOneProduct(idProduct);
     }
 
     public int randomPrizeId(){
@@ -83,5 +78,5 @@ public class Service {
 
         return answerPrizeId;
     }
-    // -----------------------------------------------------------------------
+    
 }

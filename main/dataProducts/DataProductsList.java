@@ -31,6 +31,12 @@ public class DataProductsList implements Iterable<Product> {
         productList.set(index, newValue);
     }
 
+    public void delOneProduct(int index){
+        Product newValue = productList.get(index);
+        newValue.setAll(newValue.getAll() - 1);
+        productList.set(index, newValue);
+    }
+
     @Override
     public Iterator<Product> iterator() {
         return new ObjectIterator(productList);
