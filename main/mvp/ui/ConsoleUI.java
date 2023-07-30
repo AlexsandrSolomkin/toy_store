@@ -103,6 +103,18 @@ public class ConsoleUI implements View {
     }
 
     @Override
+    public void writeDataInFile(){
+        // StringBuilder startName = new StringBuilder();
+        // startName.append("dataProducts/dataFiles/data");
+        // System.out.println("Для корректной работы системы, в началеимени файла будет указан префикс: dataВашеНазваниеФайла.txt");
+        // System.out.println("Введите название файла, в котором будут хранить данные на текущий момент: ");
+        
+        String pathFile = "main/dataProducts/dataFiles/dataProducts.txt";
+        // startName.append(nameFile).append(".txt");
+        presenter.writeDataInFile(pathFile);
+    }
+
+    @Override
     public void exitWorkProgramm() {
         System.out.println("Работа завершена.");
         flagWork = false;

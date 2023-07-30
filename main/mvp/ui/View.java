@@ -13,5 +13,6 @@ public interface View {
     void getInfoWinner();
     void setProbability();
     void prizeDrawing();
+    void writeDataInFile();
     void exitWorkProgramm();
 }

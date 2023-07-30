@@ -28,6 +28,11 @@ public class Presenter {
         service.randomPrize(nameWinner);
     }
 
+    public void writeDataInFile(String path){
+        System.out.println("Данные записаны");
+        service.writeDataInFile(path);
+    }
+
     public void getProduct() {
         view.print(service.getInfo());
     }

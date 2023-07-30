@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Writable
  */
-public interface Writable {
+public interface Writable<T> {
     /**
      * Метод для записи данных в файл
      * 
@@ -13,7 +13,7 @@ public interface Writable {
      * @param filePath     - путь к файлу, в который сделать запись
      * @return
      */
-    boolean write(Serializable serializable, String filePath);
+    boolean write(T serializable, String filePath);
 
     /**
      * Метод загрузки данных из файла

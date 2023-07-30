@@ -17,6 +17,7 @@ public class MainMenu {
         commandList.add(new GetInfoWinner(view));
         commandList.add(new SetProbability(view));
         commandList.add(new PrizeDrawing(view));
+        commandList.add(new WriteDataInFile(view));
         commandList.add(new ExitWorkProgramm(view));
     }
 

@@ -1,7 +1,11 @@
 package main.service;
 
+import java.io.Serializable;
+
 import main.dataProducts.DataProductsList;
 import main.dataProducts.DataWinner;
+import main.dataProducts.workDataProducts.FileHandler;
+import main.dataProducts.workDataProducts.Writable;
 import main.product.Product;
 import main.product.Winner;
 
@@ -98,5 +102,11 @@ public class Service {
 
         return answerPrizeId;
     }
-    
+
+    public void writeDataInFile(String path){
+
+        Writable<DataProductsList> writable = new FileHandler<>();
+
+        writable.write(dataProductsList, path);
+    }
 }
