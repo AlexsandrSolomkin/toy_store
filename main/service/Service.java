@@ -44,16 +44,36 @@ public class Service {
         return stringBuilder.toString();
     }
 
+    public String getInfoWinner(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Победители, призы:\n");
+
+        for (Winner winner : dataWinner) {
+            stringBuilder.append("\n=============================");
+            stringBuilder.append("\nid: ")
+                    .append(winner.getWinnerId())
+                    .append("\nНик: ")
+                    .append(winner.getNameW())
+                    .append("\nПриз: ")
+                    .append(winner.getPrizeW().getName());
+            stringBuilder.append("\n=============================");
+        }
+        return stringBuilder.toString();
+    }
+
     public void setProbability(int index, int value){
         dataProductsList.setProbability(index, value);
     }
 
     public void randomPrize(String nameWinner){
         int idProduct = randomPrizeId();
+
         Product prize = dataProductsList.getObject(idProduct);
         Winner winner = new Winner(id++, nameWinner, prize);
+
         dataWinner.addWinner(winner);
         dataProductsList.delOneProduct(idProduct);
+        dataProductsList.checkCountObject(idProduct);
     }
 
     public int randomPrizeId(){

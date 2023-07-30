@@ -31,4 +31,7 @@ public class Presenter {
     public void getProduct() {
         view.print(service.getInfo());
     }
+    public void getInfoWinner(){
+        view.print(service.getInfoWinner());
+    }
 }

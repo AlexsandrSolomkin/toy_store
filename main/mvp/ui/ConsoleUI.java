@@ -82,6 +82,11 @@ public class ConsoleUI implements View {
     }
 
     @Override
+    public void getInfoWinner(){
+        presenter.getInfoWinner();
+    }
+
+    @Override
     public void setProbability(){
         System.out.println("Введите id нужного товара: ");
         int index = scanner.nextInt();

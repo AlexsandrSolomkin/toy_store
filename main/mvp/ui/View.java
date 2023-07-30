@@ -10,6 +10,7 @@ public interface View {
 
     void addProduct();
     void getProduct();
+    void getInfoWinner();
     void setProbability();
     void prizeDrawing();
     void exitWorkProgramm();

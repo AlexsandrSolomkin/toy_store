@@ -37,6 +37,13 @@ public class DataProductsList implements Iterable<Product> {
         productList.set(index, newValue);
     }
 
+    public void checkCountObject(int index){
+        Product newValue = productList.get(index);
+        if(newValue.getAll() == 0){
+            productList.remove(index);
+        }
+    }
+
     @Override
     public Iterator<Product> iterator() {
         return new ObjectIterator(productList);
