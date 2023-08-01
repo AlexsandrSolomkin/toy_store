@@ -1,12 +1,13 @@
 package main.dataProducts;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import main.product.Product;
 
-public class DataProductsList implements Iterable<Product> {
+public class DataProductsList implements Iterable<Product>, Serializable {
     private List<Product> productList;
 
     public DataProductsList() {

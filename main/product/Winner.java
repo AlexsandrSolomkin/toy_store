@@ -1,6 +1,8 @@
 package main.product;
 
-public class Winner {
+import java.io.Serializable;
+
+public class Winner implements Serializable{
     private int winnerId;
     private String nameW;
     private Product prizeW;

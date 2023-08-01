@@ -33,6 +33,11 @@ public class Presenter {
         service.writeDataInFile(path);
     }
 
+    public void readDataInFile(String path){
+        System.out.println("Загрузка данных");
+        service.readDataInFile(path);
+    }
+
     public void getProduct() {
         view.print(service.getInfo());
     }

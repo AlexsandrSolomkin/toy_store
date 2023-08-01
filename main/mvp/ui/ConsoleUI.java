@@ -115,6 +115,12 @@ public class ConsoleUI implements View {
     }
 
     @Override
+    public void readDataInFile(){
+        String pathFile = "main/dataProducts/dataFiles/dataProducts.txt";
+        presenter.readDataInFile(pathFile);
+    }
+
+    @Override
     public void exitWorkProgramm() {
         System.out.println("Работа завершена.");
         flagWork = false;

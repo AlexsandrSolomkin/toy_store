@@ -109,4 +109,10 @@ public class Service {
 
         writable.write(dataProductsList, path);
     }
+
+    public void readDataInFile(String path){
+        Writable<DataProductsList> writable = new FileHandler<>();
+
+        dataProductsList = (DataProductsList) writable.read(path);
+    }
 }
