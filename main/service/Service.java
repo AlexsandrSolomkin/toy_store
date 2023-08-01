@@ -105,13 +105,13 @@ public class Service {
 
     public void writeDataInFile(String path){
 
-        Writable<DataProductsList> writable = new FileHandler<>();
+        Writable writable = new FileHandler();
 
         writable.write(dataProductsList, path);
     }
 
     public void readDataInFile(String path){
-        Writable<DataProductsList> writable = new FileHandler<>();
+        Writable writable = new FileHandler();
 
         dataProductsList = (DataProductsList) writable.read(path);
     }

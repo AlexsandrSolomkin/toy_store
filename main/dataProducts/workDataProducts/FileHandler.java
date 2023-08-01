@@ -2,10 +2,10 @@ package main.dataProducts.workDataProducts;
 
 import java.io.*;
 
-public class FileHandler<T> implements Writable<T> {
+public class FileHandler implements Writable {
 
     @Override
-    public boolean write(T serializable, String filePath) {
+    public boolean write(Serializable serializable, String filePath) {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))) {
             objectOutputStream.writeObject(serializable);
             return true;
